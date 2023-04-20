@@ -2,38 +2,42 @@
 <html>
 <head>
     <style>
-
+        h1 {
+          background-color: white;
+          border-style: outset;
+        }
         #pyramid {
             line-height: 0;
             font-size: 30px;
+            text-align: right; 
+            color: sandybrown;
         }
 
         body {
             font-family: "Courier New", monospace;
             text-align: center;
+            background-color: lightblue;
+            color: red;
+        }
+        footer {
+          background-color: green;
+          text-color: black;
         }
     </style>
+    <h1>Super Mario Pyramid Slide</h1>
 </head>
 <body >
-    <h1>Mario 3</h1>
+    <label for="brick">Brick:</label>
+    <select name="brick" id="brick" onchange="determineHeightAndThenDrawPyramid()">
+      <option value="#">#</option>
+      <option value="@">@</option>
+      <option value="M">M</option>
+      <option value="H">H</option>
+    </select>
 
-    <br>
+    <label>Height?</label>
 
-    <p>When you say</p>
-
-    <p><strong>Draw a pyramid</strong></p>
-
-    <p>I say:</p>
-
-    <br>
-
-    <label>How high?</label>
-
-    <input type="text" id="height" value=0 />
-
-    <br><br>
-
-    <button onclick="determineHeightAndThenDrawPyramid()">Draw a pyramid</button>
+    <input type="range" id="height" min="1" max="20" step="1" value=1 oninput="determineHeightAndThenDrawPyramid()" />
 
     <br><br>
 
@@ -41,4 +45,7 @@
   
     <script src="mario.js"></script>
 </body>
+<footer>
+  <p>@wintendoproductions</p>
+</footer>
 </html>
